@@ -126,7 +126,7 @@
     "undici": "^7.16.0",
     "uniqid": "^5.4.0",
     "user-agents": "^1.1.669",
-    "whatsapp-web.js": "github:devlikeapro/whatsapp-web.js#fork-main-2026-06-26",
+    "whatsapp-web.js": "github:Hermiq-ai/whatsapp-web.js#942d236a11ad68807308b058303ba5256915979c",
     "write-file-atomic": "^6.0.0",
     "yaml": "^2.7.1",
     "zod": "^4.3.6"
