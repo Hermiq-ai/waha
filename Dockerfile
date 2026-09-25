@@ -1,3 +1,5 @@
+# syntax=docker/dockerfile:1
+
 ARG NODE_IMAGE_TAG=24.11-bookworm-slim
 ARG GOLANG_IMAGE_TAG=1.24-bookworm
 
@@ -20,12 +22,22 @@ COPY .yarnrc.yml .
 ENV YARN_CHECKSUM_BEHAVIOR=update
 
 RUN npm install -g corepack && corepack enable
-RUN yarn install
+RUN --mount=type=secret,id=github_token,required=true \
+    set -eu; \
+    TOKEN="$(cat /run/secrets/github_token)"; \
+    git config --global url."https://x-access-token:${TOKEN}@github.com/".insteadOf "https://github.com/"; \
+    trap 'git config --global --unset-all url."https://x-access-token:${TOKEN}@github.com/".insteadOf || true' EXIT; \
+    yarn install
 
 # App
 WORKDIR /git
 ADD . /git
-RUN yarn install
+RUN --mount=type=secret,id=github_token,required=true \
+    set -eu; \
+    TOKEN="$(cat /run/secrets/github_token)"; \
+    git config --global url."https://x-access-token:${TOKEN}@github.com/".insteadOf "https://github.com/"; \
+    trap 'git config --global --unset-all url."https://x-access-token:${TOKEN}@github.com/".insteadOf || true' EXIT; \
+    yarn install
 RUN yarn build && find ./dist -name "*.d.ts" -delete
 
 # Rebuild sharp from source on x86-64 so it runs on pre-v2 CPUs (no SSE4.2 requirement).
@@ -238,6 +250,7 @@ ENV WAHA_GOWS_PATH=/app/gows
 ENV WAHA_GOWS_SOCKET=/tmp/gows.sock
 
 COPY entrypoint.sh /entrypoint.sh
+RUN sed -i 's/\r$//' /entrypoint.sh && chmod +x /entrypoint.sh
 
 # Chokidar options to monitor file changes
 ENV CHOKIDAR_USEPOLLING=1
