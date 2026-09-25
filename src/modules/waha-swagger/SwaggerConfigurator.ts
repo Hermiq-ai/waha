@@ -1,6 +1,6 @@
 import { INestApplication } from '@nestjs/common';
 import { DocumentBuilder, OpenAPIObject, SwaggerModule } from '@nestjs/swagger';
-import { DECORATORS } from '@nestjs/swagger/dist/constants';
+import { DECORATORS } from '@nestjs/swagger';
 import { GetAppsApiTags } from '@waha/apps/app_sdk/api/tags';
 import { WhatsappConfigService } from '@waha/config.service';
 import { BasicAuthFunction } from '@waha/core/auth/basicAuth';

@@ -22,7 +22,9 @@ export async function runText(
   text = text.replace(/[*_~`]/g, '');
   const output = new BufferedOutput();
   const program = BuildProgram(commands, ctx, output);
-  const argv = parse(text);
+  const argv = parse(text).filter(
+    (entry): entry is string => typeof entry === 'string',
+  );
   try {
     await program.parseAsync(argv, { from: 'user' });
   } catch (err) {
