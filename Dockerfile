@@ -217,6 +217,14 @@ ENV CHOKIDAR_INTERVAL=5000
 # WAHA variables
 ENV WAHA_ZIPPER=ZIPUNZIP
 
+# Apply available Debian security fixes and remove npm from the runtime image.
+# WAHA starts with node directly; npm and npx are only needed in the build stage.
+RUN apt-get update \
+    && apt-get upgrade -y \
+    && rm -rf /var/lib/apt/lists/* \
+    && rm -rf /usr/local/lib/node_modules/npm \
+    && rm -f /usr/local/bin/npm /usr/local/bin/npx
+
 # Run command, etc
 EXPOSE 3000
 # Use tini as init system to handle zombie processes properly
