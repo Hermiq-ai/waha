@@ -40,7 +40,7 @@
     "@figuro/chatwoot-sdk": "^1.1.17",
     "@liaoliaots/nestjs-redis": "^9",
     "@lottiefiles/dotlottie-web": "^0.72.1",
-    "@modelcontextprotocol/sdk": "^1.29.0",
+    "@modelcontextprotocol/sdk": "^1.32.1",
     "@napi-rs/canvas": "^1.0.0",
     "@nestjs/axios": "^3.0.2",
     "@nestjs/bullmq": "^11.0.2",
