@@ -9248,16 +9248,16 @@ __metadata:
   languageName: node
   linkType: hard
 
-"joi@npm:^17.13.3":
-  version: 17.13.3
-  resolution: "joi@npm:17.13.3"
+"joi@npm:^17.13.8":
+  version: 17.13.8
+  resolution: "joi@npm:17.13.8"
   dependencies:
     "@hapi/hoek": "npm:^9.3.0"
     "@hapi/topo": "npm:^5.1.0"
     "@sideway/address": "npm:^4.1.5"
     "@sideway/formula": "npm:^3.0.1"
     "@sideway/pinpoint": "npm:^2.0.0"
-  checksum: 10/4c150db0c820c3a52f4a55c82c1fc5e144a5b5f4da9ffebc7339a15469d1a447ebb427ced446efcb9709ab56bd71a06c4c67c9381bc1b9f9ae63fc7c89209bdf
+  checksum: 10/7d8ccb06cee958516748519cb46430b1bf5b732f54428a5daf8f8630290c928be1abb7d3c3c2506d68ba76d1c1abe480e087255c34b839aae47b2ee2c76f587d
   languageName: node
   linkType: hard
 
@@ -13605,7 +13605,7 @@ __metadata:
     ical.js: "npm:^2.2.1"
     ioredis: "npm:^5"
     jest: "npm:^29.7.0"
-    joi: "npm:^17.13.3"
+    joi: "npm:^17.13.8"
     knex: "npm:^3.1.0"
     libphonenumber-js: "npm:^1.10.36"
     libsignal: "github:WhiskeySockets/libsignal-node#master"
@@ -13653,7 +13653,7 @@ __metadata:
     user-agents: "npm:^1.1.669"
     whatsapp-web.js: "github:Hermiq-ai/whatsapp-web.js#f3721b9d2ee4a06bc13e03441b9f74ee122f464a"
     write-file-atomic: "npm:^6.0.0"
-    yaml: "npm:^2.7.1"
+    yaml: "npm:^2.8.3"
     zod: "npm:^4.3.6"
   dependenciesMeta:
     bufferutil:
@@ -14009,15 +14009,6 @@ __metadata:
   version: 5.0.0
   resolution: "yallist@npm:5.0.0"
   checksum: 10/1884d272d485845ad04759a255c71775db0fac56308764b4c77ea56a20d56679fad340213054c8c9c9c26fcfd4c4b2a90df993b7e0aaf3cdb73c618d1d1a802a
-  languageName: node
-  linkType: hard
-
-"yaml@npm:^2.7.1":
-  version: 2.8.0
-  resolution: "yaml@npm:2.8.0"
-  bin:
-    yaml: bin.mjs
-  checksum: 10/7d4bd9c10d0e467601f496193f2ac254140f8e36f96f5ff7f852b9ce37974168eb7354f4c36dc8837dde527a2043d004b6aff48818ec24a69ab2dd3c6b6c381c
   languageName: node
   linkType: hard
 

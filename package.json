@@ -89,7 +89,7 @@
     "https-proxy-agent": "^7.0.0",
     "ical.js": "^2.2.1",
     "ioredis": "^5",
-    "joi": "^17.13.3",
+    "joi": "^17.13.8",
     "knex": "^3.1.0",
     "libphonenumber-js": "^1.10.36",
     "libsignal": "github:WhiskeySockets/libsignal-node#master",
@@ -128,7 +128,7 @@
     "user-agents": "^1.1.669",
     "whatsapp-web.js": "github:Hermiq-ai/whatsapp-web.js#f3721b9d2ee4a06bc13e03441b9f74ee122f464a",
     "write-file-atomic": "^6.0.0",
-    "yaml": "^2.7.1",
+    "yaml": "^2.8.3",
     "zod": "^4.3.6"
   },
   "optionalDependencies": {
