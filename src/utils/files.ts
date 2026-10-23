@@ -1,9 +1,8 @@
+import esm from '@waha/vendor/esm';
 import * as path from 'path';
 
 // eslint-disable-next-line @typescript-eslint/no-var-requires
 const fs = require('fs-extra');
-// eslint-disable-next-line @typescript-eslint/no-var-requires
-const fileType = require('file-type');
 
 export async function fileExists(filepath: string) {
   try {
@@ -18,7 +17,7 @@ export async function detectMimetype(
   buffer: Buffer,
   fallback = 'application/octet-stream',
 ): Promise<string> {
-  const result = await fileType.fromBuffer(buffer);
+  const result = await esm.ft.fileTypeFromBuffer(buffer);
   return result?.mime ?? fallback;
 }
 
