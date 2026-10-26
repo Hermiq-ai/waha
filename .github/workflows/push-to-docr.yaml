@@ -3,11 +3,19 @@ name: Publish Hermiq WAHA
 on:
   workflow_dispatch:
   push:
+    branches:
+      - core
     tags:
       - 'v*'
 
 permissions:
   contents: read
+
+# Back-to-back merges queue rather than run in parallel, so an older commit
+# can never finish last and overwrite "latest" with a stale image.
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: false
 
 env:
   IMAGE_NAME: waha
@@ -92,7 +100,7 @@ jobs:
           docker push "${SHA_IMAGE}"
 
           # Also push a human-readable tag: the git tag on a tag-triggered
-          # run, otherwise "latest" for manual dispatches off the default branch.
+          # run, otherwise "latest" for merges to core and manual dispatches.
           if [[ "${GITHUB_REF}" == refs/tags/* ]]; then
             EXTRA_TAG="${GITHUB_REF_NAME}"
           else
