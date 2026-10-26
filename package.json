@@ -156,7 +156,8 @@
     "picomatch": "4.0.7",
     "serialize-javascript": "7.1.2",
     "tmp": "0.2.7",
-    "uuid": "^11.1.1"
+    "uuid": "^11.1.1",
+    "@tootallnate/once": "2.0.1"
   },
   "devDependencies": {
     "@grpc/grpc-js": "^1.14.5",
