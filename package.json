@@ -129,7 +129,7 @@
     "whatsapp-web.js": "github:Hermiq-ai/whatsapp-web.js#f3721b9d2ee4a06bc13e03441b9f74ee122f464a",
     "write-file-atomic": "^6.0.0",
     "yaml": "^2.8.3",
-    "zod": "^4.3.6"
+    "zod": "^4.6.6"
   },
   "optionalDependencies": {
     "bufferutil": "^4.0.8"
