@@ -34,13 +34,21 @@ export class PhoneNumbersCacheRepository {
     return new Date(Date.now() - this.ttlMs);
   }
 
+  private databaseDate(value: Date): Date | string {
+    const client = this.knex.client.config.client;
+    if (client === 'sqlite3' || client === 'better-sqlite3') {
+      return value.toISOString();
+    }
+    return value;
+  }
+
   async get(key: string): Promise<PhoneNumbersCacheEntry | null> {
     const row = await this.knex(this.tableName)
       .where({
         app_pk: this.appPk,
         key: key,
       })
-      .where('resolved_at', '>=', this.ttlCutoff())
+      .where('resolved_at', '>=', this.databaseDate(this.ttlCutoff()))
       .first();
     if (!row) {
       return null;
@@ -64,7 +72,7 @@ export class PhoneNumbersCacheRepository {
       key: key,
       chat_id: chatId,
       verified: verified,
-      resolved_at: resolvedAt,
+      resolved_at: this.databaseDate(resolvedAt),
     }));
     await this.knex(this.tableName)
       .insert(rows)
@@ -98,7 +106,7 @@ export class PhoneNumbersCacheRepository {
   async purge(olderThan?: Date): Promise<number> {
     const query = this.knex(this.tableName).where({ app_pk: this.appPk });
     if (olderThan) {
-      query.where('resolved_at', '<', olderThan);
+      query.where('resolved_at', '<', this.databaseDate(olderThan));
     }
     return await query.delete();
   }

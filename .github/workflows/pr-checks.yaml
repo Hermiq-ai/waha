@@ -1,0 +1,49 @@
+name: PR Checks
+
+on:
+  pull_request:
+    branches:
+      - core
+
+permissions:
+  contents: read
+
+concurrency:
+  group: pr-checks-${{ github.event.pull_request.number }}
+  cancel-in-progress: true
+
+jobs:
+  checks:
+    name: checks
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version-file: .nvmrc
+
+      - name: Enable Corepack
+        run: corepack enable
+
+      - name: Install dependencies
+        env:
+          WWEBJS_READ_TOKEN: ${{ secrets.WWEBJS_READ_TOKEN }}
+        run: |
+          set -euo pipefail
+          git config --global url."https://x-access-token:${WWEBJS_READ_TOKEN}@github.com/".insteadOf "https://github.com/"
+          trap 'git config --global --unset-all url."https://x-access-token:${WWEBJS_READ_TOKEN}@github.com/".insteadOf || true' EXIT
+          yarn install --immutable
+
+      - name: Run lint
+        run: yarn lint
+
+      - name: Run unit tests
+        run: yarn test:unit --runInBand
+
+      - name: Build
+        run: yarn build
