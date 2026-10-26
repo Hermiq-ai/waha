@@ -123,13 +123,13 @@
     "swagger-ui-express": "^4.1.4",
     "tapable": "^2.2.2",
     "ulid": "^2.3.0",
-    "undici": "^8.11.2",
+    "undici": "^8.12.2",
     "uniqid": "^5.4.0",
     "user-agents": "^1.1.669",
     "whatsapp-web.js": "github:Hermiq-ai/whatsapp-web.js#f3721b9d2ee4a06bc13e03441b9f74ee122f464a",
     "write-file-atomic": "^6.0.0",
     "yaml": "^2.8.3",
-    "zod": "^4.3.6"
+    "zod": "^4.6.6"
   },
   "optionalDependencies": {
     "bufferutil": "^4.0.8"
@@ -144,10 +144,10 @@
     "whatsapp-rust-bridge": "npm:@devlikeapro/whatsapp-rust-bridge@0.5.2",
     "sharp": "0.35.5",
     "fast-xml-parser": "5.11.1",
-    "ip-address": "10.7.2",
+    "ip-address": "10.7.4",
     "js-yaml": "5.4.2",
     "lodash": "4.18.1",
-    "multer": "2.4.0",
+    "multer": "2.5.0",
     "protobufjs": "8.8.0",
     "tar": "7.5.22",
     "browserslist": "4.29.1",
