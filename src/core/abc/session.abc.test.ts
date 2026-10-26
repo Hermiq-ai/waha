@@ -1,6 +1,7 @@
 import {
   parseChannelInviteLink,
   parseGroupInviteLink,
+  SessionParams,
   WhatsappSession,
 } from '@waha/core/abc/session.abc';
 import { WAHAEvents, WAHASessionStatus } from '@waha/structures/enums.dto';
@@ -37,7 +38,8 @@ class TestSession extends BaseSession {
 }
 
 function buildSession(): TestSession {
-  return new TestSession({
+  // Typed so a new required session param fails the build instead of the run
+  const params: SessionParams = {
     name: 'test',
     printQR: false,
     loggerBuilder: { child: () => logger },
@@ -45,8 +47,18 @@ function buildSession(): TestSession {
     mediaManager: null,
     sessionConfig: null,
     engineConfig: null,
-    ignore: {},
-  });
+    ignore: {
+      status: false,
+      groups: false,
+      channels: false,
+      broadcast: false,
+    },
+    media: {
+      api: { download: true, mimetypes: [] },
+      events: { download: true, mimetypes: [] },
+    },
+  };
+  return new TestSession(params);
 }
 
 const ACTIVE_TIMELOCK: ReachoutTimelockData = {
