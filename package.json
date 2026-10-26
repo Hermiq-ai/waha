@@ -123,7 +123,7 @@
     "swagger-ui-express": "^4.1.4",
     "tapable": "^2.2.2",
     "ulid": "^2.3.0",
-    "undici": "^8.11.2",
+    "undici": "^8.12.2",
     "uniqid": "^5.4.0",
     "user-agents": "^1.1.669",
     "whatsapp-web.js": "github:Hermiq-ai/whatsapp-web.js#f3721b9d2ee4a06bc13e03441b9f74ee122f464a",
