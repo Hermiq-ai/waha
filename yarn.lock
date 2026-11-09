@@ -12963,7 +12963,7 @@ __metadata:
     undici: "npm:^8.12.2"
     uniqid: "npm:^5.4.0"
     user-agents: "npm:^1.1.669"
-    whatsapp-web.js: "github:Hermiq-ai/whatsapp-web.js#f3721b9d2ee4a06bc13e03441b9f74ee122f464a"
+    whatsapp-web.js: "github:Hermiq-ai/whatsapp-web.js#0cf1f706c6cca92798d3e5ceb8794de17a42847a"
     write-file-atomic: "npm:^6.0.0"
     yaml: "npm:^2.8.3"
     zod: "npm:^4.6.6"
@@ -13072,9 +13072,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"whatsapp-web.js@github:Hermiq-ai/whatsapp-web.js#f3721b9d2ee4a06bc13e03441b9f74ee122f464a":
+"whatsapp-web.js@github:Hermiq-ai/whatsapp-web.js#0cf1f706c6cca92798d3e5ceb8794de17a42847a":
   version: 1.34.7
-  resolution: "whatsapp-web.js@https://github.com/Hermiq-ai/whatsapp-web.js.git#commit=f3721b9d2ee4a06bc13e03441b9f74ee122f464a"
+  resolution: "whatsapp-web.js@https://github.com/Hermiq-ai/whatsapp-web.js.git#commit=0cf1f706c6cca92798d3e5ceb8794de17a42847a"
   dependencies:
     archiver: "npm:7.0.1"
     fluent-ffmpeg: "npm:2.1.3"
@@ -13082,7 +13082,7 @@ __metadata:
     mime: "npm:3.0.0"
     node-fetch: "npm:2.7.0"
     node-webpmux: "npm:3.2.1"
-    puppeteer: "npm:25.10.0"
+    puppeteer: "npm:25.16.0"
     unzipper: "npm:0.12.3"
   dependenciesMeta:
     archiver:
@@ -13091,7 +13091,7 @@ __metadata:
       optional: true
     unzipper:
       optional: true
-  checksum: 10/0cc2de6a45d3e6ffa952114f1be2e0e52e0a90fa2cc85c0794176368bee653c7991567d2e6d294356f8b93b7dd4594fee1fd78077b5e28ab4bf1ffa4ad0be1c9
+  checksum: 10/ea15e6a0f6d00a2d7e5208579520bd8f4df531a41609d35852d481eb582e41275bcdf6264506bd812e792a8b9df5b146d17cfe9ff1e35e9986a4bbf6f65e1482
   languageName: node
   linkType: hard
 
