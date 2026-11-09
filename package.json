@@ -89,7 +89,7 @@
     "https-proxy-agent": "^7.0.0",
     "ical.js": "^2.2.1",
     "ioredis": "^5",
-    "joi": "^17.13.8",
+    "joi": "^17.13.9",
     "knex": "^3.1.0",
     "libphonenumber-js": "^1.10.36",
     "libsignal": "github:WhiskeySockets/libsignal-node#master",
